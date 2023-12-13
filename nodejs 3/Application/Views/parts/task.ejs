@@ -1,0 +1,19 @@
+<div class="list-group-item list-group-item-action flex-column align-items-start <% if(task.check){ %> check <% } %>">
+    <div class="d-flex w-100 justify-content-between">
+        <a href="/todo/<%= task._id %>/check" data-callback="check" data-model="task" data-id="<%= task._id %>">
+            <h5 class="mb-1 title"><%= task.title %></h5>
+        </a>
+        <div>
+            <a href="/todo/<%= task._id %>/delete" data-callback="remove" data-model="task" data-id="<%= task._id %>">
+                <span class="badge badge-dark remove">X</span>
+            </a>
+        </div>
+    </div>
+    <p class="mb-1 col-11 pl-0 content"><%= task.content %></p>
+    <div class="d-flex w-100 justify-content-between">
+        <div>
+            <span class="badge badge-info">Florent</span>
+            <span class="badge badge-light">+</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Todo | Home</title>
+        <!-- Application:Style -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/theme.css">
+        <!-- Application:Js -->
+        <script type="text/javascript" src="js/app.js" defer></script>
+    </head>
+    <body>
+        
+        <%- include('parts/header') %>
+
+        <main>
+			<div class="container">
+                <div class="list-group list-group-flush">
+
+                    <% tasks.forEach((task) => { %>
+                        <%- include('parts/task', { task: task }) %>
+                    <% }); %>
+
+                    <form class="list-group-item list-group-item-action permanent flex-column align-items-start" action="/todo" method="POST">
+                        <div class="input-group">
+                            <input name="title" type="text" class="col-12 form-control" placeholder="Titre votre tache">
+                        </div>
+                        <div class="input-group">
+                            <textarea name="content" class="col-12 form-control" placeholder="Description de la tache"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <button type="submit" class="col-12 btn btn-primary">Ajouter</button>
+                        </div>
+                    <form>
+
+                </div>
+			</div>
+		</main>
+
+        <%- include('parts/footer') %>
+
+
+    </body>
+</html>

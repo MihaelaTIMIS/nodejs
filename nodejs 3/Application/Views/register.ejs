@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Todo | Register</title>
+        <!-- Application:Style -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/theme.css">
+        <!-- Application:Js -->
+        <script type="text/javascript" src="js/ejs.min.js" defer></script>
+        <script type="text/javascript" src="js/app.js" defer></script>
+    </head>
+    <body>
+       
+        <%- include('parts/header') %>
+
+        <main>
+			<div class="container">
+                <form method="POST" action="user/register">
+                    <div class="form-group">
+                        <input id="firstName" type="text" class="form-control" value="toto" name="firstName" placeholder="Prénom" required pattern="[a-zA-Z]+">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <input id="lastName" type="text" class="form-control" value="toto" name="lastName"  placeholder="Nom" required pattern="[a-zA-Z]+">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <input id="login" type="email" class="form-control" value="toto@gmail.com" name="login"  placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="form-group">
+                        <input id="password" type="password" class="form-control" value="azAZ12#1" name="password" placeholder="Password" required pattern="^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\d]){1,})(?=(.*[\W]){1,})(?!.*\s).{8,}$">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+			</div>
+		</main>
+
+        <%- include('parts/footer') %>
+
+    </body>
+</html>
